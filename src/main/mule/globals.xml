@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:email="http://www.mulesoft.org/schema/mule/email" xmlns:cluster="http://www.mulesoft.org/schema/mule/ee/cluster"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/email http://www.mulesoft.org/schema/mule/email/current/mule-email.xsd">
+	<global-property doc:name="Global Property" doc:id="03bd87dc-eeac-4733-b7ec-2f51a2b9e499" name="api.id" value="0" />
+	<global-property doc:name="Global Property" doc:id="7c72b82c-b88a-44f7-a060-eb921227fab8" name="app.version" value="0.0.0" />
+	<global-property doc:name="Global Property" doc:id="13397f45-49e3-47c6-9a49-0f7b2f8c1ea5" name="mule.env" value="dev" />
+	<configuration-properties doc:name="Configuration properties" doc:id="e007020a-623c-4dff-8f23-af8b47910a53" file="properties\dev.yaml" />
+	<email:smtp-config name="Email_SMTP" doc:name="Email SMTP" doc:id="0479e361-9d28-4cad-8c54-0dcd025c648f" from="${smtp.from}">
+		<email:smtp-connection host="${smtp.host}" port="${smtp.port}"/>
+	</email:smtp-config>
+</mule>

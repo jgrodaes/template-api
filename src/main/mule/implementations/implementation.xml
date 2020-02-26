@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:email="http://www.mulesoft.org/schema/mule/email" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/email http://www.mulesoft.org/schema/mule/email/current/mule-email.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="f7ee0d57-977e-4ac0-822d-a394db45efed" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="implementationFlow" doc:id="48862def-1508-4cff-bef2-2390e388e468" >
+		<http:listener doc:name="/email" doc:id="7a56db84-69db-4bb5-aa95-e4e57067090e" path="/email" config-ref="HTTP_Listener_config"/>
+		<parse-template doc:name="Parse Template" doc:id="4bc83032-9d03-4709-82c3-0a501ec64860" location="email-template.html" target="template"/>
+		<email:send doc:id="b79e5f9e-81cb-4248-8b2e-983a0f90e1bc" config-ref="Email_SMTP" subject='#["mulesoft - test"]'>
+			<email:to-addresses >
+				<email:to-address value="brandon.cochrane@parkland.ca" />
+			</email:to-addresses>
+			<email:body contentType="text/html" encoding="UTF-8">
+			</email:body>
+		</email:send>
+	</flow>
+</mule>

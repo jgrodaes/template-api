@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:json-logger="http://www.mulesoft.org/schema/mule/json-logger" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/mule/json-logger/current/mule-json-logger.xsd">
+	<json-logger:config name="JSON_Logger_Config" doc:name="JSON Logger Config" doc:id="f147002b-a6a5-45bc-ba4d-f9abbd3adde7" />
+	<flow name="templateFlow" doc:id="8b1aa89e-70de-4ab9-9752-68062a37d63a" >
+		<logger level="INFO" doc:name="Logger" doc:id="11087e74-fed2-451a-94e1-eac56c9e5ec5" message="template"/>
+	</flow>
+</mule>

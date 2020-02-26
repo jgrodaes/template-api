@@ -1,0 +1,5 @@
+smtp:
+ host: "10.250.241.122"
+ port: "25"
+ user: ""
+ from: "integration_mule@parkland.ca"
